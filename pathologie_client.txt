@@ -1,1 +1,2 @@
-
+//argent gagnée
+//client+pathologie
