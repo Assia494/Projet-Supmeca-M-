@@ -1,4 +1,8 @@
-int fonction_gestion_argent_cabinet(Jeu j, Dentiste d) // j variable de type Jeu d dentiste
+#include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
+
+int fonction_gestion_argent_cabinet(Jeu j, Dentiste d) // j variable de type Jeu, d dentiste
 {
     FILE fichier = NULL ;
     
