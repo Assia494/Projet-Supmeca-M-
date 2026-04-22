@@ -13,7 +13,7 @@ void gestion_fichier_patient(Patient p)
      printf("code d'erreur = %d \n", errno );
      printf("Message d'erreur = %s \n", strerror(errno) );
      exit(1);
-}
+ }
 
 fprintf(fichier, "%d", &p.pathologie);
 fprintf(fichier, "%d", &p.ustensiles);
