@@ -20,6 +20,7 @@ Temps Chrnometre(){      //Fonction pour chronometrer le temps
      
      if (t->minutes >= 5){
         humeur.Patient = rouge; 
+            //retirer argent chez dentiste 
      }
    }
    
