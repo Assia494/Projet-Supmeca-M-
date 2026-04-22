@@ -1,0 +1,28 @@
+Temps Chrnometre(){      //Fonction pour chronometrer le temps 
+   Temps *t; 
+   
+   t->seconde->Temps =0 ;
+   t->minute->Temps=0 ; 
+   t->heure->Temps=0 ;
+   
+   while (fauteuil.Patient=1){
+      seconde += 1;
+      
+     if (t->secondes >= 60) {
+        t->secondes = 0;
+        t->minutes++;
+     }
+
+     if (t->minutes >= 60) {
+        t->minutes = 0;
+        t->heures++;
+     }
+     
+     if (t->minutes >= 5){
+        humeur.Patient = rouge; 
+     }
+   }
+   
+
+   
+}
