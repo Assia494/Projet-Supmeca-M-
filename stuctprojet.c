@@ -28,6 +28,6 @@ typedef struct{
     int    pathologie           ; // 1 pathologie = 1 nombre
     float  montant_a_payer      ; // diminue si qualité mauvaise
     int    humeur               ; // jauge
-    int    fauteuille           ; //vide ou non
+    int    fauteuil             ; //vide ou non
     Temps  heure_arrive         ; // a partir du moment où il est dans le  fauteuil
 } Patient;
