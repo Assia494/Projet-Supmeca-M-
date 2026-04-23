@@ -1,10 +1,11 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 typedef struct{
     int heure                    ;
     int minute                   ;
     int seconde                  ;
-} Temps;
+} Temps; 
 
 typedef struct{    
     Dentiste  dentiste           ; // on peut augmenter au bout d'un montant
@@ -26,6 +27,7 @@ typedef struct{
     int   gants                 ; // mis = 1 pas mis = 0
     int   ustensile_en_main      ; // num ustensile
     int   main                  ; // pleine = 1 pas pleine = 0   
+    bool  proprete_ustensile    ; // 1=propre 0=sale 
 } Dentiste
 
 typedef struct{
