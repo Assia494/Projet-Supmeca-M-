@@ -12,8 +12,14 @@ typedef struct{
     Patient   patient            ;
     int       nb_client          ; // depuis le debut de la parti
     float     argent_cabinet     ; // ensemble argent gagné
-    int       humeur             ; //nb patient mecontent, content et furieux
+    Humeur       humeur             ; //nb patient mecontent, content et furieux
 } Jeu;
+
+typedef enum{ //choix dif etats 
+    VERT; 
+    ORANGE; 
+    ROUGE; 
+}Humeur; 
 
 typedef struct{
     int** position              ; // du dentiste sur plateau
