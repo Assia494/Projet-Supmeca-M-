@@ -1,9 +1,5 @@
 Temps Chrnometre(){      //Fonction pour chronometrer le temps 
-   Temps *t; 
-   
-   t->seconde->Temps =0 ;
-   t->minute->Temps=0 ; 
-   t->heure->Temps=0 ;
+   Temps *t;
    
    while (fauteuil.Patient=1){
       seconde += 1;
