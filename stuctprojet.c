@@ -10,7 +10,7 @@ typedef struct{
 typedef struct{    
     Dentiste  dentiste           ; // on peut augmenter au bout d'un montant
     Temps     temps_debut_partie ;   
-    Patient   patient            ;
+    Patient   patient            ;  //mettre tableau de patient 
     int       nb_client          ; // depuis le debut de la parti
     float     argent_cabinet     ; // ensemble argent gagné
     Humeur    humeur             ; //nb patient mecontent, content et furieux
@@ -24,9 +24,9 @@ typedef enum{ //choix dif etats
 
 
 typedef enum{
-    SATISFAIT,
-    MECONTENT,
-    FURIEUX
+    SATISFAIT;
+    MECONTENT;
+    FURIEUX;
 } EtatPatient;
 
 
@@ -43,7 +43,8 @@ typedef struct{
     int    ustensile            ; // 1 ustensile = 1 nombre
     int    pathologie           ; // 1 pathologie = 1 nombre
     float  montant_a_payer      ; // diminue si qualité mauvaise
-    int    humeur               ; // jauge
+    Huemeur    humeur           ; // jauge
     int    fauteuil             ; //vide ou non
     Temps  heure_arrive         ; // a partir du moment où il est dans le  fauteuil
+    EtatPatient etat            ; //mecontent, furieux, heureux
 } Patient;
