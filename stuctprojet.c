@@ -24,9 +24,9 @@ typedef enum{ //choix dif etats
 
 
 typedef enum{
-    SATISFAIT;
-    MECONTENT;
-    FURIEUX;
+    Satisfait;
+    Mecontent;
+    Furieux;
 } EtatPatient;
 
 
