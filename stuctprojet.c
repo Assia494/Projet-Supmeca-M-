@@ -36,7 +36,8 @@ typedef struct{
     int   ustensile_en_main      ; // num ustensile
     int   main                  ; // pleine = 1 pas pleine = 0   
     bool  proprete_ustensile    ; // 1=propre 0=sale 
-} Dentiste
+    bool proprete_gants         ;        //
+} Dentiste;
 
 typedef struct{
     int*   plateau              ; // tableau avec num ustensiles
