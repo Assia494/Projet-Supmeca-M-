@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include<unistd.h>
+#include <unistd.h>
 
 //#define GRID_SIZE_X 20
 //#define GRID_SIZE_Y 10
@@ -748,6 +748,7 @@ void make_tool_tab(int tab[] ,int a,int b,int c,int d,int e,int f,int g){
     tab[6] = g;
 }
 //-----------------------------------------------------------
+//les profits ,outils necéssaire pour soigner sont paramétrés ici
 _patient* cree_patient(){
     _patient* patient = NULL;
     patient = malloc(sizeof(_patient));
@@ -790,7 +791,7 @@ _patient* cree_patient(){
     }
     
     return patient;
-}  //les profits ,outils necéssaire pour soigner sont paramétrés ici
+}
 //-----------------------------------------------------------
 int get_a_patient(_plateau* plateau_tab ,int taille ,int initial_hapiness){
     exit_if_null_pointer(plateau_tab);
