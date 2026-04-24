@@ -35,7 +35,7 @@ typedef struct{
     int   gants                 ; // mis = 1 pas mis = 0
     int   ustensile_en_main      ; // num ustensile
     int   main                  ; // pleine = 1 pas pleine = 0   
-    bool  proprete_ustensile    ; // 1=propre 0=sale 
+    bool  proprete_ustensile    ; // true=propre false=sale 
     bool proprete_gants         ;        //
 } Dentiste;
 
