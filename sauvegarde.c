@@ -17,7 +17,9 @@ int sauvegarde_existe(){
     return 0; // sinon il n'existe pas
 }
 
-int recupération_de_sauvegarde(Jeu jsauv, Jeu jnew) //jsauv est la partie sauvegardé et jnew est la nouvelle partie
+
+
+int recupération_de_sauvegarde(Jeu *jsauv, Jeu *jnew) //jsauv est la partie sauvegardé et jnew est la nouvelle partie
 {
     FILE fichier = NULL;
     
@@ -32,58 +34,58 @@ int recupération_de_sauvegarde(Jeu jsauv, Jeu jnew) //jsauv est la partie sauve
     // on veut récuper une partie sauvegardé dans le fichier et la mettre dans la nouvelle partie ouverte
     
     // recupère les dentistes
-    fscanf(fichier, "%d", &jsauv.dentiste->position           ); // revenir dessus
-    fscanf(fichier, "%d", &jsauv.dentiste.gants               );
-    fscanf(fichier, "%d", &jsauv.patient.ustensile_en_main    );
-    fscanf(fichier, "%d", &jsauv.patient.main                 );
-    fscanf(fichier, "%d", &jsauv.patient.proprete_ustensile   ); // revenir dessus
+    fscanf(fichier, "%d", &jsauv->dentiste->position           ); // revenir dessus
+    fscanf(fichier, "%d", &jsauv->dentiste.gants               );
+    fscanf(fichier, "%d", &jsauv->patient.ustensile_en_main    );
+    fscanf(fichier, "%d", &jsauv->patient.main                 );
+    fscanf(fichier, "%d", &jsauv->patient.proprete_ustensile   ); // revenir dessus
     
     // recupère les patients déjà présent
-    fscanf(fichier, "%d", &jsauv.patient->plateau             );
-    fscanf(fichier, "%d", &jsauv.patient.pathologie           );
-    fscanf(fichier, "%f", &jsauv.patient.montant_a_payer      );
-    fscanf(fichier, "%d", &jsauv.patient.humeur               );
+    fscanf(fichier, "%d", &jsauv->patient->plateau             );
+    fscanf(fichier, "%d", &jsauv->patient.pathologie           );
+    fscanf(fichier, "%f", &jsauv->patient.montant_a_payer      );
+    fscanf(fichier, "%d", &jsauv->patient.humeur               );
     // recupère heure_arrive
-    fscanf(fichier, "%d", &jsauv.patient.heure_arrive.heure   );
-    fscanf(fichier, "%d", &jsauv.patient.heure_arrive.minute  );
-    fscanf(fichier, "%d", &jsauv.patient.heure_arrive.seconde );
+    fscanf(fichier, "%d", &jsauv->patient.heure_arrive.heure   );
+    fscanf(fichier, "%d", &jsauv->patient.heure_arrive.minute  );
+    fscanf(fichier, "%d", &jsauv->patient.heure_arrive.seconde );
     
     // recupère temps de le debut de la partie
-    fscanf(fichier, "%d", &jsauv.temps_debut_partie.heure     );
-    fscanf(fichier, "%d", &jsauv.temps_debut_partie.minute    );
-    fscanf(fichier, "%d", &jsauv.temps_debut_partie.seconde   );
+    fscanf(fichier, "%d", &jsauv->temps_debut_partie.heure     );
+    fscanf(fichier, "%d", &jsauv->temps_debut_partie.minute    );
+    fscanf(fichier, "%d", &jsauv->temps_debut_partie.seconde   );
     
     // recupère argent_cabinetnt et nb de client partie et leur humeur
-    fscanf(fichier, "%f", &jsauv.argent_cabinet               );
-    fscanf(fichier, "%d", &jsauv.humeur                       ); // revenir dessus
+    fscanf(fichier, "%f", &jsauv->argent_cabinet               );
+    fscanf(fichier, "%d", &jsauv->humeur                       ); // revenir dessus
     
     // on met la partie sauvegardé dans la nouvelle partie pour reprendre exactement là où on en était
     
     // on met le dentiste dans la nouv partie
-    jnew.dentiste->position           = jsauv.dentiste->position;        // revenir dessus
-    jnew.dentiste.gants               = jsauv.dentiste.gants;
-    jnew.patient.ustensile_en_main    = jsauv.patient.ustensile_en_main;
-    jnew.patient.main                 = jsauv.patient.main;
-    jnew.patient.proprete_ustensile   = jsauv.patient.proprete_ustensile; // revenir dessus
+    jnew->dentiste->position           = jsauv->dentiste->position;        // revenir dessus
+    jnew->dentiste.gants               = jsauv->dentiste.gants;
+    jnew->patient.ustensile_en_main    = jsauv->patient.ustensile_en_main;
+    jnew->patient.main                 = jsauv->patient.main;
+    jnew->patient.proprete_ustensile   = jsauv->patient.proprete_ustensile; // revenir dessus
     
     // on met les patients déjà présent
-    jnew.patient->plateau             = jsauv.patient->plateau;
-    jnew.patient.pathologie           = jsauv.patient.pathologie;
-    jnew.patient.montant_a_payer      = jsauv.patient.montant_a_payer;
-    jnew.patient.humeur               = jsauv.patient.humeur;
+    jnew->patient->plateau             = jsauv->patient->plateau;
+    jnew->patient->pathologie           = jsauv->patient.pathologie;
+    jnew->patient->montant_a_payer      = jsauv->patient.montant_a_payer;
+    jnew->patient.humeur               = jsauv->patient.humeur;
     // on met heure_arrive
-    jnew.patient.heure_arrive.heure   = jsauv.patient.heure_arrive.heure;
-    jnew.patient.heure_arrive.minute  = jsauv.patient.heure_arrive.minute;
-    jnew.patient.heure_arrive.seconde = jsauv.patient.heure_arrive.seconde;
+    jnew->patient.heure_arrive.heure   = jsauv->patient.heure_arrive.heure;
+    jnew->patient.heure_arrive.minute  = jsauv->patient.heure_arrive.minute;
+    jnew->patient.heure_arrive.seconde = jsauv->patient.heure_arrive.seconde;
     
     // on met temps de le debut de la partie
-    jnew.temps_debut_partie.heure     =  jsauv.temps_debut_partie.heure;
-    jnew.temps_debut_partie.minute    =  jsauv.temps_debut_partie.minute;
-    jnew.temps_debut_partie.seconde   =  jsauv.temps_debut_partie.seconde;
+    jnew->temps_debut_partie.heure     =  jsauv->temps_debut_partie.heure;
+    jnew->temps_debut_partie.minute    =  jsauv->temps_debut_partie.minute;
+    jnew->temps_debut_partie.seconde   =  jsauv->temps_debut_partie.seconde;
     
     // on met argent_cabinetnt et nb de client partie et leur humeur
-    jnew.argent_cabinet              =  jsauv.argent_cabinet;
-    jnew.humeur                      =  jsauv.humeur;        // revenir dessus
+    jnew->argent_cabinet              =  jsauv->argent_cabinet;
+    jnew->humeur                      =  jsauv->humeur;        // revenir dessus
     
     fclose(fichier);
     return 0;
