@@ -16,7 +16,7 @@ int sauvegarde_existe(){
 
 int 
 
-int recupération_de_sauvegarde(Jeu j)
+int recupération_de_sauvegarde(Jeu j1, Jeu j2)
 {
     FILE fichier = NULL;
     
