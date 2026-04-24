@@ -140,7 +140,7 @@ void verifier_ustensile_pathologie(Dentiste *d, Patient *p){    //mauvais ustens
 
 void gerer_patient(Patient *p, Dentiste *d, Temps temps_actuel){
 
-    if (p->fauteuil == 0){
+    if (p->fauteuil == 0){ 
         return;
     }
 
