@@ -138,6 +138,67 @@ void verifier_ustensile_pathologie(Dentiste *d, Patient *p){    //mauvais ustens
     }
 }
 
+
+
+void encaisser_patient(Jeu *j, Patient *p){
+
+    j->argent_cabinet = j->argent_cabinet + calculer_montant_patient(p);
+}
+
+
+int peut_soigner_patient(Dentiste *d, Patient *p){
+
+    if ( p->fauteuil == 0){
+        return 0;
+    }
+
+    if ( d->gants == 0){
+        return 0;
+    }
+
+    if ( d->mains == 1) {
+        return 0;
+    }
+
+    return 1;
+}
+
+
+void verifier_proprete_gants(Dentiste *d, Patient *p){
+
+    if (d->proprete_gants == false){
+        p->humeur = ROUGE;
+        p->etat = FURIEUX;
+        p->fauteuil = 0;
+    }
+}
+
+
+
+
+
+void apres_soins_patient(Dentiste *d, Patient *p, Jeu *j){
+     
+     if (peut_soigner_patient(d,p) == 0){
+        return; 
+     }
+
+     if(p->humeur == ROUGE){
+        p->ETAT = Mecontent; 
+     }
+     else {
+        p->ETAT = Satisfait; 
+     }
+         
+     
+     j->argent_cabinet = j->argent_cabinet + calculer_montant_patient(p);
+    
+     p->fauteuil = 0; 
+     d->proprete_gants = false; 
+     d->proprete_ustensile = false; 
+
+}
+
 void gerer_patient(Patient *p, Dentiste *d, Temps temps_actuel){
 
     if (p->fauteuil == 0){ 
@@ -173,7 +234,3 @@ void gerer_patient(Patient *p, Dentiste *d, Temps temps_actuel){
     }
 }
 
-void encaisser_patient(Jeu *j, Patient *p){
-
-    j->argent_cabinet = j->argent_cabinet + calculer_montant_patient(p);
-}
