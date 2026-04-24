@@ -22,6 +22,14 @@ typedef enum{ //choix dif etats
     ROUGE; 
 }Humeur; 
 
+
+typedef enum{
+    SATISFAIT,
+    MECONTENT,
+    FURIEUX
+} EtatPatient;
+
+
 typedef struct{
     int** position              ; // du dentiste sur plateau
     int   gants                 ; // mis = 1 pas mis = 0
