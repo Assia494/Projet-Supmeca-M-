@@ -34,7 +34,7 @@ void mettre_a_jour_humeur_patient(Patient *p, Temps temps_actuel){
 
     
     if (attente >= 600){     // 10min pr s en aller
-        p->etat = FURIEUX;
+        p->etat = Furieux;
         p->fauteuil = 0;
     }
 }
@@ -43,10 +43,10 @@ void mettre_a_jour_humeur_patient(Patient *p, Temps temps_actuel){
 
 float calculer_montant_patient(Patient *p){
 
-    if (p->etat == FURIEUX){
+    if (p->etat == Furieux){
         return 0;
     }
-    else if (p->etat == MECONTENT){
+    else if (p->etat == Mecontent){
         return p->montant_a_payer / 2;
     }
     else{
@@ -61,7 +61,7 @@ void verifier_gants(Dentiste *d, Patient *p){
 
     if (d->gants == 0){
         p->humeur = ROUGE;
-        p->etat = FURIEUX;
+        p->etat = Furieux;
         p->fauteuil = 0;
     }
 }
@@ -72,7 +72,7 @@ void verifier_proprete_ustensile(Dentiste *d, Patient *p){
 
     if (d->proprete_ustensile == false){
         p->humeur = ROUGE;
-        p->etat = FURIEUX;
+        p->etat = Furieux;
         p->fauteuil = 0;
     }
 }
@@ -83,56 +83,56 @@ void verifier_ustensile_pathologie(Dentiste *d, Patient *p){    //mauvais ustens
 
     if (p->pathologie == 1 && d->ustensile_en_main != 1){
         p->humeur = ROUGE;
-        p->etat = FURIEUX;
+        p->etat = Furieux;
         p->fauteuil = 0;
         return;
     }
 
     if (p->pathologie == 2 && d->ustensile_en_main != 2){
         p->humeur = ROUGE;
-        p->etat = FURIEUX;
+        p->etat = Furieux;
         p->fauteuil = 0;
         return;
     }
 
     if (p->pathologie == 3 && d->ustensile_en_main != 3){
         p->humeur = ROUGE;
-        p->etat = FURIEUX;
+        p->etat = Furieux;
         p->fauteuil = 0;
         return;
     }
 
     if (p->pathologie == 4 && d->ustensile_en_main != 4){
         p->humeur = ROUGE;
-        p->etat = FURIEUX;
+        p->etat = Furieux;
         p->fauteuil = 0;
         return;
     }
 
     if (p->pathologie == 5 && d->ustensile_en_main != 5){
         p->humeur = ROUGE;
-        p->etat = FURIEUX;
+        p->etat = Furieux;
         p->fauteuil = 0;
         return;
     }
 
     if (p->pathologie == 6 && d->ustensile_en_main != 6){
         p->humeur = ROUGE;
-        p->etat = FURIEUX;
+        p->etat = Furieux;
         p->fauteuil = 0;
         return;
     }
 
     if (p->pathologie == 7 && d->ustensile_en_main != 7){
         p->humeur = ROUGE;
-        p->etat = FURIEUX;
+        p->etat = Furieux;
         p->fauteuil = 0;
         return;
     }
 
     if (p->pathologie == 8 && d->ustensile_en_main != 8){
         p->humeur = ROUGE;
-        p->etat = FURIEUX;
+        p->etat = Furieux;
         p->fauteuil = 0;
         return;
     }
@@ -166,10 +166,10 @@ void gerer_patient(Patient *p, Dentiste *d, Temps temps_actuel){
 
     
     if (p->humeur == ROUGE){   //verif etat pr payement
-        p->etat = MECONTENT;
+        p->etat = Mecontent;
     }
     else{
-        p->etat = SATISFAIT;
+        p->etat = Satisfait;
     }
 }
 
