@@ -9,12 +9,13 @@ int sauvegarde_existe(){
     
     if(fichier!= NULL){ // verifie si le fichier existe
         fclose(fichier); 
+        printf("Partie chargée !\n");
         return 1; // ferme le fichier et retourne vrai
     }
+    
+    printf("Aucune sauvegarde trouvée.\n");
     return 0; // sinon il n'existe pas
 }
-
-int 
 
 int recupération_de_sauvegarde(Jeu jsauv, Jeu jnew) //jsauv est la partie sauvegardé et jnew est la nouvelle partie
 {
