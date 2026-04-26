@@ -193,7 +193,7 @@ besoin pour prendre ustensile et poser ustensile
 
 
 
-int plateau_est_pret(Patient *p)
+int plateau_est_pret(...)
 
 
 	-> Vérifie si tous les ustensiles nécessaires sont présents sur le plateau du patient.
@@ -249,7 +249,7 @@ void mettre_gants(Dentiste *d)
 
 
 
-void faire_arriver_patient(Patient *p, Temps temps_actuel)`
+void faire_arriver_patient(...)
 
 	-> Installe un nouveau patient dans un fauteuil.
 
@@ -266,7 +266,7 @@ elle initialise:
 
 
 
-void faire_partir_patient(Patient *p)
+void faire_partir_patient(...)
 
 	-> Réinitialise l’état du patient quand il part.
 
@@ -277,7 +277,7 @@ void faire_partir_patient(Patient *p)
 
 
 
-void compter_etats_patients(Jeu *j, Patient *p)
+void compter_etats_patients(...)
 
 Met à jour les compteurs :
 
@@ -294,7 +294,7 @@ Le cahier des charges demande d’afficher ces nombres.
 
 
 
-float lire_prix_ustensile(int id)                                                                                            
+float lire_prix_ustensile(...)                                                                                            
 
 	-> Lit dans le fichier des ustensiles combien coûte l’objet pris.
 
@@ -307,7 +307,7 @@ float lire_prix_ustensile(int id)
 
 
 
-void debiter_ustensile(Jeu *j, int id)                                             
+void debiter_ustensile(...)                                             
 
 	-> Retire du cabinet le coût de l’ustensile pris.
 
@@ -341,7 +341,7 @@ void charger_partie(...)
 
 
 
-void afficher_patient(Patient *p, Temps temps_actuel)
+void afficher_patient(..)
 
 Afficher :
 
@@ -355,7 +355,7 @@ Afficher :
 
 
 
-void afficher_dentiste(Dentiste *d)
+void afficher_dentiste
 
 
 
